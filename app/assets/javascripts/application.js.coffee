@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require semantic-ui
+//= require jquery.jgrowl
 //= require_tree .
 
 ready = ->
@@ -11,6 +12,14 @@ ready = ->
 
   $(".message .close").on "click", ->
     $(this).closest(".message").fadeOut()
+
+  $('#main .flash .ui.message').each ->
+    status = if $(this).hasClass('error') then 'error' else if $(this).hasClass('success') then 'success' else 'notice'
+
+    $.jGrowl($(this).text(), {
+      themeState: status
+    });
+    $(this).hide();
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
