@@ -2,10 +2,8 @@ source "https://rubygems.org"
 
 # Server and Base Application
 gem "rails", "4.0.2"
-gem "thread_safe"
 gem "therubyracer", platforms: :ruby
-gem "unicorn"
-gem 'hashugar', github: 'alex-klepa/hashugar'
+gem "hashugar", github: "alex-klepa/hashugar"
 gem "devise", "~> 3.0.0"
 gem "cancan"
 gem "omniauth"
