@@ -2,6 +2,7 @@
 ---
 
 You can use this project as a starting point for a Rails web application.
+[Check out the demo](http://rails-semantic.herokuapp.com/) you can login as an administrator with: `admin@example.com / administrator`
 
 * Rails 4
 * Mongoid as database
