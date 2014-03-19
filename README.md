@@ -1,11 +1,17 @@
 # Rails 4.0 App with Mongoid, Devise, CanCan, OmniAuth and Semantic UI (TDD ready)
 ---
 
-You can use this project as a starting point for a Rails web application. It requires Rails 4 uses Mongoid as database, Devise/OmniAuth for user management and authentication, CanCan for user access control, and Semantic UI for CSS styling.
+You can use this project as a starting point for a Rails web application.
 
-[Rails 4.0 Bootstrap Demo App](http://rails4-bootstrap.klepa.co/)
+* Rails 4
+* Mongoid as database
+* Devise with OmniAuth for user management and authentication
+* CanCan for user access control
+* Haml for default views
+* Simple Form for forms
+* Semantic UI for CSS styling with default scripts and form helpers
 
-## How to use
+## Installation
 * clone this repo
 * `cd myapp`
 * Edit `db/seed.rb` to customimze admin user settings then run `rake db:seed` to create admin user
@@ -15,9 +21,26 @@ You can use this project as a starting point for a Rails web application. It req
 config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], scope: 'email,user_birthday,read_stream'
 config.omniauth :twitter, ENV['CONSUMER_KEY'], ENV['CONSUMER_SECRET']
 ```
-* Edit `config/config.yml` to customize your application settings, they will be avaliable via `AppConfig` object within your app, e.g. `AppConfig.default_role`
+* Edit `config/config.yml` to customize your application settings, they will be available via `AppConfig` object within your app, e.g. `AppConfig.default_role`
 
+## Simple Form
+By default, your form fields will be wrapped using simple form, however there are a few custom wrappers you can use as well:
 
+**Select Fields**
+
+```ruby
+= simple_form_for @challenge do |f|
+  .field
+    = f.label 'Challenge Type'
+    = semantic_select :type, f, ['option 1', 'option 2'], default: 'None'
+  .field
+    = f.submit t('submit')
+```
+
+*Checkboxes or Radio Fields*
+```ruby
+= f.input :remember_me, as: :boolean, wrapper: :semantic_checkbox
+```
 
 ---
 ### Links
