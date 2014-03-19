@@ -1,6 +1,6 @@
-Pnthr::Application.routes.draw do
-  
-  
+SemanticRails::Application.routes.draw do
+
+
   authenticated :user do
     root to: 'home#index', as: :authenticated_root
   end
@@ -10,8 +10,8 @@ Pnthr::Application.routes.draw do
   end
 
   devise_for :users, controllers: {
-    registrations: "users/registrations", 
-    passwords: "users/passwords", 
+    registrations: "users/registrations",
+    passwords: "users/passwords",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 

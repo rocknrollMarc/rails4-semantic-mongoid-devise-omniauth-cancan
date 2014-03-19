@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Pnthr::Application.load_tasks
+SemanticRails::Application.load_tasks
