@@ -28,3 +28,6 @@ gem 'active_model_serializers'
 gem 'haml'
 gem 'haml-rails', group: :development
 gem 'simple_form', github: 'plataformatec/simple_form'
+
+# Heroku
+gem 'rails_12factor', group: :production
