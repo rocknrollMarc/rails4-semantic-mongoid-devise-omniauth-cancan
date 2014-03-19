@@ -1,0 +1,193 @@
+/*
+ *= require semantic-ui
+ *= require_self
+ *= require_tree .
+*/
+
+@import "constants";
+@import url("http://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Carrois+Gothic+SC|Roboto:400,300,500,700,900");
+
+/**
+ * RESET
+ *
+ * Reset the margins and paddings, etc of all raw html elements
+ * Make block elements actually display block
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary, time, mark, audio, video
+{
+  border: 0;
+  font-size: 100%;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+*:focus {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+// HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+{
+  display: block;
+}
+
+body {
+  @extend %font_body;
+
+  background: #222;
+  color: #aaa;
+  font-size: 10px;
+  font-weight: 100;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @extend %font_header;
+  font-weight: 100;
+  margin: .25em 0 .15em 0;
+  padding: .25em 0 .15em 0;
+}
+
+h1 {
+  font-size: 2em;
+  text-shadow: 0 1px 0 #000;
+}
+
+h2 {
+  border-bottom: 1px dashed #444;
+  font-size: 1.6em;
+  margin: .65em 0 1em 0;
+}
+
+blockquote, q
+{
+  @extend %font_display;
+  background: rgba(255,255,255,0.06);
+  border-left: 2px solid rgba(255,255,255,0.2);
+  display: block;
+  margin: .5em 0;
+  padding: 10px 15px;
+  position: relative;
+  quotes: none;
+
+  &.right {
+    border: none;
+    border-right: 2px solid rgba(255,255,255,0.2);
+    color: $label_color;
+    float: right;
+    font-size: 1.25em;
+    max-width: 50%;
+    margin: .75em 0 0 1em;
+  }
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after
+{
+  content: '';
+  content: none;
+}
+
+p {
+  font-size: .875em;
+  line-height: 1.75em;
+  padding: .25em 0 .5em;
+
+  q {
+    background: none;
+    border: none;
+    display: inline;
+    padding: 0;
+  }
+}
+
+
+a {
+  color: $link_color;
+  text-decoration: none;
+
+  &:hover {
+    color: lighten($link_color, 30%);
+  }
+}
+
+label {
+  color: $label_color;
+}
+
+/**
+ * SEMANTIC UI
+ *
+ * Override some of the semantic defaults for better presentation
+ */
+.ui.form .field > label {
+  color: $label_color;
+  font-size: 16px !important;
+  font-weight: 200;
+}
+.ui.form .boolean.inline.field > label {
+  margin-top: -4px;
+}
+
+/**
+ * SENSIBLE DEFAULTS
+ *
+ * We all have to start somewhere, it might as well be here
+ */
+#main {
+  ul {
+    font-size: .875em;
+    margin: 0 0 1.5em 18px;
+
+    ul, ol {
+      margin-bottom: 0;
+    }
+
+    li {
+      list-style: circle;
+      margin: 5px 0;
+
+      ul li {
+        list-style: disc;
+
+        ul li {
+          list-style: square;
+        }
+      }
+    }
+  }
+
+  ol {
+    font-size: .875em;
+    margin: 0 0 1em 18px;
+
+    ul, ol {
+      margin-bottom: 0;
+    }
+
+    li {
+      list-style: decimal;
+      margin: 5px 0;
+
+      ul li {
+        list-style: square;
+      }
+
+      ol li {
+        list-style: lower-latin;
+
+         ol li {
+           list-style: lower-roman;
+         }
+      }
+    }
+  }
+}

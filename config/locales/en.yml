@@ -1,0 +1,18 @@
+en:
+  navigation:
+    home: Home
+    logout: Logout
+    login: Login
+
+  account:
+    create: Sign Up
+    edit: Edit Account
+
+  admin:
+    users: Manage Users
+
+  auth:
+    login_with_email: Login with Email
+    register_with_email: Register with Email
+    with_facebook: Login with Facebook
+    with_twitter: Login with Twitter

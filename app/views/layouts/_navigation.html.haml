@@ -1,0 +1,20 @@
+.ui.inverted.secondary.pointing.menu
+  = nav_link t('navigation.home'), root_path, icon: 'home'
+
+  .right.menu
+    - if user_signed_in?
+      = nav_link t('account.edit'), edit_user_registration_path, icon: 'user'
+
+      - if current_user.has_role? :admin
+        = nav_link t('admin.users'), users_path, icon: 'users'
+
+      = nav_link t('navigation.logout'), destroy_user_session_path, method: 'delete', icon: 'sign out'
+    - else
+      .ui.dropdown.item
+        %i.arrow.down.icon
+        Login or Register
+        .menu
+          = nav_link t('auth.login_with_email'), new_user_session_path, icon: 'user'
+          = nav_link t('auth.register_with_email'), new_user_registration_path, icon: 'mail'
+          = nav_link t('auth.with_facebook'), user_omniauth_authorize_path(:facebook), icon: 'facebook sign'
+          = nav_link t('auth.with_twitter'), user_omniauth_authorize_path(:twitter), icon: 'twitter sign'

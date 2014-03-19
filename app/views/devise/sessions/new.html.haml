@@ -1,0 +1,11 @@
+.ui.grid.two.column.page
+  .column
+    %h1 Sign in
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: 'login-user' }) do |f|
+      = f.input :email, autofocus: true
+      = f.input :password
+      = f.input :remember_me, as: :boolean, wrapper: :semantic_checkbox if devise_mapping.rememberable?
+      = f.button :submit, "Sign in"
+  .column
+
+    = render "devise/shared/links"
