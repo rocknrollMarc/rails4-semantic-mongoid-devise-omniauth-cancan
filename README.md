@@ -1,9 +1,9 @@
-# Rails 4.0 Boilerplate App
+# Rails 4.0 App with Mongoid, Devise, CanCan, OmniAuth and Semantic UI (TDD ready)
+---
 
-You can use this project as a starting point for a Rails web application. It's TDD ready, and has some great defaults for styles and layout.
+You can use this project as a starting point for a Rails web application.
 [Check out the demo](http://rails-semantic.herokuapp.com/) you can login as an administrator with: `admin@example.com / administrator`
 
-## Featuring
 * Rails 4
 * Mongoid as database
 * Devise with OmniAuth for user management and authentication
