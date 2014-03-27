@@ -1,12 +1,11 @@
 SemanticRails::Application.routes.draw do
 
-
   authenticated :user do
-    root to: 'home#index', as: :authenticated_root
+    root to: 'static#home', as: :authenticated_root
   end
 
   unauthenticated do
-    root to: "home#index"
+    root to: "static#home"
   end
 
   devise_for :users, controllers: {
@@ -16,7 +15,10 @@ SemanticRails::Application.routes.draw do
   }
 
   resources :users
-  get "home/index"
+  
+  get "static/home"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
