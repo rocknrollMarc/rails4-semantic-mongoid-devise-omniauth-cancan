@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Server and Base Application
-gem "rails", "4.0.2"
+gem "rails", "4.1.0"
 gem "thread_safe", "~> 0.2.0"
 gem "therubyracer", platforms: :ruby
 gem "hashugar", github: "alex-klepa/hashugar"
