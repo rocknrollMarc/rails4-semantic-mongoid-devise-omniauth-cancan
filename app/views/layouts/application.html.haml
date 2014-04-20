@@ -17,8 +17,7 @@
     %header
       = render 'layouts/navigation'
     #main{ class: content_for?(:main_class) ? yield(:main_class) : '' }
-      .flash
-        = semantic_flash
+      = render 'layouts/messages'
       = yield
     %footer
       = render 'layouts/footer'

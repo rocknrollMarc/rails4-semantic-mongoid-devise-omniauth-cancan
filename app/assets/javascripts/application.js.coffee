@@ -17,7 +17,8 @@ ready = ->
     status = if $(this).hasClass('error') then 'error' else if $(this).hasClass('success') then 'success' else 'notice'
 
     $.jGrowl($(this).text(), {
-      themeState: status
+      themeState: status,
+      sticky: true
     });
     $(this).hide();
 

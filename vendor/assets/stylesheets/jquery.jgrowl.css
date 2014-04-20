@@ -1,5 +1,5 @@
 div.jGrowl {
-	color: #fff;
+	color: #444;
 	font-size: 12px;
 	z-index: 9999;
 }
@@ -99,6 +99,11 @@ div.jGrowl div.jGrowl-notification.ui-state-error {
 div.jGrowl div.jGrowl-notification.ui-state-success {
   border-color: #15861d;
   color: #15861d;
+}
+
+div.jGrowl div.jGrowl-notification.ui-state-notice {
+	border-color: #ebb100;
+	color: #ebb100;
 }
 
 div.jGrowl div.jGrowl-notification {
